@@ -1,0 +1,16 @@
+---
+import { contacts } from '../data/content';
+import Arrow from './Arrow.astro';
+const nav = [['tasks', 'Задачи'], ['services', 'Услуги'], ['experience', 'Опыт'], ['process', 'Как работаю'], ['contact', 'Контакты']];
+---
+<a class="skip-link" href="#main">К содержимому</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Вадим Родберг, в начало страницы"><span class="brand-mark" aria-hidden="true">вр<span>↗</span></span><span><strong>{contacts.name}</strong><small>{contacts.tagline}</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden><span class="menu-label">Меню</span><span class="menu-symbol" aria-hidden="true"><i></i><i></i></span></button>
+    <nav id="navigation" aria-label="Основная навигация">
+      {nav.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+      <a class="button button-small header-cta" href={contacts.telegram} target="_blank" rel="noopener noreferrer" data-event="primary_cta" data-placement="header">Обсудить проект <Arrow diagonal /></a>
+    </nav>
+  </div>
+</header>

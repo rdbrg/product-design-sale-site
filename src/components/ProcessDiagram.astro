@@ -1,0 +1,18 @@
+---
+import Arrow from './Arrow.astro';
+---
+<figure class="process-diagram">
+  <figcaption><span class="diagram-dot"></span> Пример логики процесса <span class="diagram-version">01 / 04</span></figcaption>
+  <div class="diagram-heading"><span>От заявки<br/>к понятному результату</span><span class="diagram-cross" aria-hidden="true">+</span></div>
+  <div class="flow">
+    <div class="flow-node"><span class="node-icon" aria-hidden="true">↳</span><div><span class="node-role">Клиент</span><strong>Новая заявка</strong></div><span class="node-status">Создана</span></div>
+    <div class="flow-connector" aria-hidden="true">↓</div>
+    <div class="flow-node active"><span class="node-icon" aria-hidden="true">✓</span><div><span class="node-role">Система</span><strong>Проверка данных</strong></div><span class="node-status">Проверка</span></div>
+    <div class="exception-path"><span class="exception-line" aria-hidden="true"></span><span><b>Не хватает данных?</b><br/>Уточнение у клиента <span aria-hidden="true">↵</span></span></div>
+    <div class="flow-connector" aria-hidden="true">↓</div>
+    <div class="flow-node"><span class="node-icon" aria-hidden="true">≡</span><div><span class="node-role">Оператор</span><strong>Обработка заявки</strong></div><span class="node-status">В работе</span></div>
+    <div class="flow-connector" aria-hidden="true">↓</div>
+    <div class="flow-node finished"><span class="node-icon" aria-hidden="true">↗</span><div><span class="node-role">Клиент</span><strong>Результат и документы</strong></div><span class="node-status">Готово</span></div>
+  </div>
+  <div class="diagram-footer"><span>Роли. Статусы. Исключения.</span><Arrow /></div>
+</figure>

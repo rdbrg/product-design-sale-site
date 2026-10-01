@@ -1,0 +1,10 @@
+---
+import { contacts, briefTemplate } from '../data/content';
+import Arrow from './Arrow.astro';
+---
+<section id="contact" class="section contact-section" aria-labelledby="contact-title">
+  <div class="container contact-grid">
+    <div><p class="eyebrow">06 / Начнём с разговора</p><h2 id="contact-title">Расскажите, что хотите <span>запустить или улучшить</span></h2><p class="contact-intro">Можно прийти с идеей, действующим продуктом или процессом, который отнимает слишком много времени. Помогу определить следующий шаг и подходящий формат работы.</p><a class="button button-light" href={contacts.telegram} target="_blank" rel="noopener noreferrer" data-event="primary_cta" data-placement="contact">Написать в Telegram <Arrow diagonal /></a><a class="contact-email" href={`mailto:${contacts.email}`} data-event="email_click">{contacts.email}<Arrow diagonal /></a><p class="contact-location">Независимый специалист · Удалённо по России</p></div>
+    <div class="brief-card"><span class="label">Чтобы начать предметно</span><h3>Несколько слов<br/>о вашей задаче</h3><p>Что за бизнес или продукт? Что сейчас не получается? Какой результат нужен? Есть ли желаемый срок и бюджет?</p><label class="sr-only" for="brief">Шаблон обращения для копирования</label><textarea id="brief" readonly rows="8" spellcheck="false">{briefTemplate}</textarea><button class="button copy-button" id="copy-brief" hidden>Скопировать шаблон обращения <span aria-hidden="true">⧉</span></button><p id="copy-status" role="status" aria-live="polite">Можно выделить текст и скопировать вручную.</p></div>
+  </div>
+</section>

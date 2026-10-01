@@ -1,0 +1,14 @@
+---
+import { cases } from '../data/content';
+import Arrow from './Arrow.astro';
+const base = import.meta.env.BASE_URL;
+---
+<section id="experience" class="section experience-section" aria-labelledby="experience-title">
+  <div class="container">
+    <div class="section-heading"><p class="eyebrow">03 / Практика</p><div><h2 id="experience-title">Опыт, на который<br/>я опираюсь</h2><p class="section-intro">Проекты из моего профессионального опыта.<br/>Не список клиентов независимой практики.</p></div></div>
+    <div class="case-list">{cases.map((project, index) => <article class="case">
+      <div class="case-visual"><div class="case-topline"><span>{project.company}</span><span>0{index + 1}</span></div><a class="case-image-link" href={project.url} target="_blank" rel="noopener noreferrer" data-event="case_open" data-case={project.id} aria-label={`Открыть кейс ${project.company}`}><img src={`${base}${project.image.replace(/^\//, '')}`} alt={project.alt} width="1000" height="640" loading="lazy" decoding="async" /></a><p class="case-caption">{project.caption}</p><div class="tags">{project.tags.map(tag => <span>{tag}</span>)}</div></div>
+      <div class="case-content"><h3>{project.title}</h3><p>{project.context}</p><dl><div><dt>Моя роль</dt><dd>{project.role}</dd></div><div><dt>Что сделал</dt><dd>{project.work}</dd></div><div class="case-result"><dt>Результат</dt><dd>{project.result}</dd></div></dl><a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer" data-event="case_open" data-case={project.id}>Разобрать кейс<Arrow diagonal /></a></div>
+    </article>)}</div>
+  </div>
+</section>

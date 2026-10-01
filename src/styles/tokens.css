@@ -1,0 +1,28 @@
+:root {
+  --color-paper: #f7f8fa;
+  --color-white: #fff;
+  --color-ink: #22262e;
+  --color-muted: #646c7b;
+  --color-line: #dce0e7;
+  --color-accent: #294fe6;
+  --color-accent-hover: #1d3fca;
+  --color-tint: #edf1ff;
+  --color-dark: #202630;
+  --font-body: 'Manrope Variable', 'Segoe UI', sans-serif;
+  --font-mono: 'Consolas', monospace;
+  --text-small: .8125rem;
+  --text-body: 1rem;
+  --text-h1: clamp(2.2rem, 3.65vw, 3.4rem);
+  --text-h2: clamp(2rem, 3.5vw, 3.1rem);
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-section: clamp(4.5rem, 8vw, 7.5rem);
+  --container: 1248px;
+  --gutter: clamp(20px, 4vw, 64px);
+  --header-height: 88px;
+  --radius: 5px;
+}

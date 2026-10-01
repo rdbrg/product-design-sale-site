@@ -1,0 +1,24 @@
+---
+import { services, contacts, budgetNote, taxNote } from '../data/content';
+import Arrow from './Arrow.astro';
+---
+<section id="services" class="section services-section" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-heading"><p class="eyebrow">02 / Услуги</p><div><h2 id="services-title">Понятный объём.<br/><span class="muted">Прозрачный ориентир.</span></h2><p class="section-intro">От разбора одного сценария до запуска рабочего инструмента. Выберите точку, с которой начнём.</p></div></div>
+    <div class="service-list">
+      {services.map(service => <article class="service" id={service.id}>
+        <span class="service-number">{service.number}</span>
+        <div class="service-content">
+          <h3>{service.title}</h3><p class="service-description">{service.description}</p>
+          <div class="service-result"><span class="label">На выходе</span><p>{service.result}</p></div>
+          <p class="delivery"><span aria-hidden="true">↳</span> {service.delivery}</p>
+          <p class="service-boundary">{service.boundary}</p>
+          <details><summary>Что входит в работу <span class="plus" aria-hidden="true"></span></summary><div class="details-content"><ul>{service.scope.map(item => <li>{item}</li>)}</ul>{service.examples && <p><strong>Например:</strong> {service.examples.join('; ')}.</p>}</div></details>
+        </div>
+        <div class="service-offer"><div class="service-price">{service.prices.map(price => <p>{price}</p>)}</div><span class="service-duration">{service.duration}</span><a class="button button-outline" href={contacts.telegram} target="_blank" rel="noopener noreferrer" data-event="service_contact" data-service={service.id}>{service.cta}<Arrow diagonal /></a></div>
+      </article>)}
+    </div>
+    <p class="budget-note"><span aria-hidden="true">↳</span>{budgetNote}</p>
+    {taxNote && <p class="tax-note">{taxNote}</p>}
+  </div>
+</section>
